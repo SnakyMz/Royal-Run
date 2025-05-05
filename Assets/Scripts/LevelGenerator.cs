@@ -14,7 +14,7 @@ public class LevelGenerator : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        SpawnChunks();
+        SpawnStartingChunks();
     }
 
     // Update is called once per frame
@@ -23,14 +23,19 @@ public class LevelGenerator : MonoBehaviour
         MoveChunks();
     }
 
-    void SpawnChunks()
+    void SpawnStartingChunks()
     {
         for (int i = 0; i < startingChunksAmount; i++)
         {
-            Vector3 chunkPosition = new Vector3(transform.position.x, transform.position.y, i * chunkLength);
-            GameObject chunk = Instantiate(chunkPrefab, chunkPosition, Quaternion.identity, chunkParent);
-            chunks.Add(chunk);
+            SpawnChunk();
         }
+    }
+
+    void SpawnChunk()
+    {
+        Vector3 chunkPosition = new Vector3(transform.position.x, transform.position.y, chunks.Count * chunkLength);
+        GameObject chunk = Instantiate(chunkPrefab, chunkPosition, Quaternion.identity, chunkParent);
+        chunks.Add(chunk);
     }
 
     void MoveChunks()
@@ -40,10 +45,11 @@ public class LevelGenerator : MonoBehaviour
             GameObject chunk = chunks[i];
             chunk.transform.Translate(Vector3.back * (moveSpeed * Time.deltaTime));
             
-            if (chunk.transform.position.z <= Camera.main.transform.position.z - chunkLength)
+            if (chunk.transform.position.z <= Camera.main.transform.position.z)
             {
                 chunks.Remove(chunk);
                 Destroy(chunk);
+                SpawnChunk();
             }
         }
     }
