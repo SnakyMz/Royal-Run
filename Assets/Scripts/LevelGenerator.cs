@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class LevelGenerator : MonoBehaviour
@@ -8,7 +9,7 @@ public class LevelGenerator : MonoBehaviour
     [SerializeField] float chunkLength = 10f;
     [SerializeField] float moveSpeed = 8f;
 
-    GameObject[] chunks = new GameObject[12];
+    List<GameObject> chunks = new List<GameObject>();
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -34,7 +35,7 @@ public class LevelGenerator : MonoBehaviour
 
     void MoveChunks()
     {
-        for ( int i = 0; i < chunks.Length; i++)
+        for ( int i = 0; i < chunks.Count; i++)
         {
             chunks[i].transform.Translate(Vector3.back * (moveSpeed * Time.deltaTime));
         }
