@@ -33,7 +33,7 @@ public class LevelGenerator : MonoBehaviour
 
     void SpawnChunk()
     {
-        Vector3 chunkPosition = new Vector3(transform.position.x, transform.position.y, chunks.Count * chunkLength);
+        Vector3 chunkPosition = new Vector3(transform.position.x, transform.position.y, (chunks.Count * chunkLength) - chunkLength);
         GameObject chunk = Instantiate(chunkPrefab, chunkPosition, Quaternion.identity, chunkParent);
         chunks.Add(chunk);
     }
@@ -45,7 +45,7 @@ public class LevelGenerator : MonoBehaviour
             GameObject chunk = chunks[i];
             chunk.transform.Translate(Vector3.back * (moveSpeed * Time.deltaTime));
             
-            if (chunk.transform.position.z <= Camera.main.transform.position.z)
+            if (chunk.transform.position.z <= Camera.main.transform.position.z - chunkLength)
             {
                 chunks.Remove(chunk);
                 Destroy(chunk);
