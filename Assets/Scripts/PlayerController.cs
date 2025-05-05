@@ -6,22 +6,29 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float speed = 5f;
     Vector2 movement;
 
-    Rigidbody rb;
+    Rigidbody rigidBody;
 
-    void Start()
+    void Awake()
     {
-        rb = GetComponent<Rigidbody>();
+        rigidBody = GetComponent<Rigidbody>();
     }
 
     void FixedUpdate()
     {
-        Vector3 input = new Vector3(movement.x, 0, movement.y);
-
-        rb.MovePosition(rb.position + input * speed * Time.fixedDeltaTime);
+        HandleMovement();
     }
 
     public void Move(InputAction.CallbackContext context)
     {
         movement = context.ReadValue<Vector2>();
+    }
+
+    void HandleMovement()
+    {
+        Vector3 currentPosition = rigidBody.position;
+        Vector3 input = new Vector3(movement.x, 0, movement.y);
+        Vector3 moveDirection = currentPosition + input * (speed * Time.fixedDeltaTime);
+
+        rigidBody.MovePosition(moveDirection);
     }
 }
