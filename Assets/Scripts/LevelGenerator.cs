@@ -29,7 +29,7 @@ public class LevelGenerator : MonoBehaviour
         {
             Vector3 chunkPosition = new Vector3(transform.position.x, transform.position.y, i * chunkLength);
             GameObject chunk = Instantiate(chunkPrefab, chunkPosition, Quaternion.identity, chunkParent);
-            chunks[i] = chunk;
+            chunks.Add(chunk);
         }
     }
 
@@ -37,7 +37,14 @@ public class LevelGenerator : MonoBehaviour
     {
         for ( int i = 0; i < chunks.Count; i++)
         {
-            chunks[i].transform.Translate(Vector3.back * (moveSpeed * Time.deltaTime));
+            GameObject chunk = chunks[i];
+            chunk.transform.Translate(Vector3.back * (moveSpeed * Time.deltaTime));
+            
+            if (chunk.transform.position.z <= Camera.main.transform.position.z - chunkLength)
+            {
+                chunks.Remove(chunk);
+                Destroy(chunk);
+            }
         }
     }
 }
