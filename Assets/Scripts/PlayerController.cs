@@ -4,6 +4,8 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] float speed = 5f;
+    [SerializeField] float range = 4f;
+
     Vector2 movement;
 
     Rigidbody rigidBody;
@@ -25,10 +27,14 @@ public class PlayerController : MonoBehaviour
 
     void HandleMovement()
     {
+
         Vector3 currentPosition = rigidBody.position;
         Vector3 input = new Vector3(movement.x, 0, movement.y);
         Vector3 moveDirection = currentPosition + input * (speed * Time.fixedDeltaTime);
 
+        moveDirection.x = Mathf.Clamp(moveDirection.x, -range, range);
+        moveDirection.z = Mathf.Clamp(moveDirection.z, -range, range);
+        
         rigidBody.MovePosition(moveDirection);
     }
 }
