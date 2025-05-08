@@ -151,6 +151,8 @@ MonoBehaviour:
   obstaclePrefabs:
   - {fileID: 3500367998593710585, guid: d184746f29028e54b976e43b60ee799a, type: 3}
   - {fileID: 8235287806100768334, guid: 11065d3542c0be54da1cfc272d1c36dc, type: 3}
+  - {fileID: 1951519662123009642, guid: 6032fdd37b73972448bc5c8a0f71cb53, type: 3}
+  - {fileID: 8447653333787949716, guid: 81cd5a368bb9ae648b8040277b0e03b2, type: 3}
   obstacleSpawnedTime: 3
   obstacleParent: {fileID: 82850955}
   spawnRange: 4
