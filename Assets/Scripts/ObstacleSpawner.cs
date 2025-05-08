@@ -6,7 +6,6 @@ public class ObstacleSpawner : MonoBehaviour
     [SerializeField] GameObject obstaclePrefab;
     [SerializeField] float obstacleSpawnedTime = 1f;
 
-    int spawnAmount = 0;
     void Start()
     {
         StartCoroutine(SpawnObstacle());
@@ -14,12 +13,11 @@ public class ObstacleSpawner : MonoBehaviour
 
     IEnumerator SpawnObstacle()
     {   
-        while (spawnAmount < 5)
+        while (true)
         {
             yield return new WaitForSeconds(obstacleSpawnedTime);
             
-            Instantiate(obstaclePrefab, transform.position, Quaternion.identity);
-            spawnAmount++;
+            Instantiate(obstaclePrefab, transform.position, Random.rotation);
         }
     }
 }
