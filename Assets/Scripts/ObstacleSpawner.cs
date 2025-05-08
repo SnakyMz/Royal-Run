@@ -4,22 +4,22 @@ using System.Collections;
 public class ObstacleSpawner : MonoBehaviour
 {
     [SerializeField] GameObject obstaclePrefab;
+    [SerializeField] float obstacleSpawnedTime = 1f;
 
+    int spawnAmount = 0;
     void Start()
     {
-        int spawnAmount = 0;
-
-        while (spawnAmount < 5)
-        {
-            StartCoroutine(SpawnObstacle());
-            spawnAmount++;
-        }
+        StartCoroutine(SpawnObstacle());
     }
 
     IEnumerator SpawnObstacle()
-    {
-        yield return new WaitForSeconds(1f);
-
-        Instantiate(obstaclePrefab, transform.position, Quaternion.identity);
+    {   
+        while (spawnAmount < 5)
+        {
+            yield return new WaitForSeconds(obstacleSpawnedTime);
+            
+            Instantiate(obstaclePrefab, transform.position, Quaternion.identity);
+            spawnAmount++;
+        }
     }
 }
