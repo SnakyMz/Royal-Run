@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstaclePrefab: {fileID: 3500367998593710585, guid: d184746f29028e54b976e43b60ee799a, type: 3}
-  obstacleSpawnedTime: 1
+  obstacleSpawnedTime: 3
 --- !u!4 &82850955
 Transform:
   m_ObjectHideFlags: 0
