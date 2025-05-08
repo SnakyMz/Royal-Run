@@ -3,8 +3,10 @@ using System.Collections;
 
 public class ObstacleSpawner : MonoBehaviour
 {
-    [SerializeField] GameObject obstaclePrefab;
-    [SerializeField] float obstacleSpawnedTime = 1f;
+    [SerializeField] GameObject[] obstaclePrefabs;
+    [SerializeField] float obstacleSpawnedTime = 3f;
+    [SerializeField] Transform obstacleParent;
+    [SerializeField] float spawnRange = 4f;
 
     void Start()
     {
@@ -16,8 +18,10 @@ public class ObstacleSpawner : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(obstacleSpawnedTime);
-            
-            Instantiate(obstaclePrefab, transform.position, Random.rotation);
+
+            GameObject obstaclePrefab = obstaclePrefabs[Random.Range(0, obstaclePrefabs.Length)];
+            Vector3 spawnPosition = new Vector3(Random.Range(-spawnRange, spawnRange), transform.position.y, transform.position.z);
+            Instantiate(obstaclePrefab, spawnPosition, Random.rotation, obstacleParent);
         }
     }
 }
