@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Pickup : MonoBehaviour
 {
-    string playerTag = "Player";
+    const string playerTag = "Player";
 
     void OnTriggerEnter(Collider other)
     {

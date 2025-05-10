@@ -2,8 +2,12 @@ using UnityEngine;
 
 public class PlayerCollisionHandler : MonoBehaviour
 {
+    [SerializeField] Animator animator;
+
+    const string hitTrigger = "Hit";
+
     void OnCollisionEnter(Collision other)
     {
-        Debug.Log(other.gameObject.name);
+        animator.SetTrigger(hitTrigger);
     }
 }
