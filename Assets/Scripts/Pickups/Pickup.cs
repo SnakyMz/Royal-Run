@@ -20,6 +20,7 @@ public abstract class Pickup : MonoBehaviour
         if (other.CompareTag(playerTag))
         {
             OnPickup();
+            Destroy(gameObject);
         }
     }
 
