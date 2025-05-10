@@ -5,6 +5,7 @@ public class Chunk : MonoBehaviour
 {
     [SerializeField] GameObject fencePrefab;
     [SerializeField] GameObject applePrefab;
+    [SerializeField] float appleSpawnChance = 0.3f;
     [SerializeField] float[] lanes = { -2.5f, 0f, 2.5f };
 
     List<int> availableLanes = new List<int> { 0, 1, 2 };
@@ -32,7 +33,7 @@ public class Chunk : MonoBehaviour
 
     void SpawnApple()
     {
-        if (availableLanes.Count <= 0) return;
+        if (Random.value > appleSpawnChance || availableLanes.Count <= 0) return;
 
         int selectedLane = SelectLane();
 
