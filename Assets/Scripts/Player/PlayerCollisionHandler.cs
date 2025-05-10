@@ -8,6 +8,11 @@ public class PlayerCollisionHandler : MonoBehaviour
     const string hitTrigger = "Hit";
     float cooldownTimer = 0f;
 
+    void Update()
+    {
+        cooldownTimer += 1f * Time.deltaTime;
+    }
+
     void OnCollisionEnter(Collision other)
     {
         if (cooldownTimer < collisionCooldown) return;
