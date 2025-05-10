@@ -41,6 +41,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1125869031831146905}
+  - component: {fileID: 674075840102299939}
+  - component: {fileID: 8911580326577480239}
   m_Layer: 0
   m_Name: Coin Pickup
   m_TagString: Untagged
@@ -64,6 +66,41 @@ Transform:
   - {fileID: 5742473541459671412}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &674075840102299939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6003419031509504006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab4fbc465d076bd4990b248eab22d081, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!136 &8911580326577480239
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6003419031509504006}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1001 &1010943386333753421
 PrefabInstance:
   m_ObjectHideFlags: 0
