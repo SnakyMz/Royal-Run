@@ -18,9 +18,12 @@ public class Chunk : MonoBehaviour
 
         for (int i = 0; i < fencesToSpawn; i++)
         {
+            if (availableLanes.Count <= 0) break;
+
             int randomIndex = Random.Range(0, availableLanes.Count);
             int selectedLane = availableLanes[randomIndex];
             availableLanes.RemoveAt(randomIndex);
+
             Vector3 spawnPosition = new Vector3(lanes[selectedLane], transform.position.y, transform.position.z);
             Instantiate(fencePrefab, spawnPosition, Quaternion.identity, transform);
         }
