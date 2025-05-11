@@ -32,6 +32,8 @@ public class LevelGenerator : MonoBehaviour
         {
             moveSpeed = minMoveSpeed;
         }
+
+        Physics.gravity = new Vector3(Physics.gravity.x, Physics.gravity.y, Physics.gravity.z - speedAmount);
     }
 
     void SpawnStartingChunks()
