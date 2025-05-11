@@ -2,8 +2,17 @@ using UnityEngine;
 
 public class Apple : Pickup
 {
+    [SerializeField] float increaseChunkSpeed = 3f;
+
+    LevelGenerator levelGenerator;
+
+    void Start()
+    {
+        levelGenerator = FindAnyObjectByType<LevelGenerator>();
+    }
+
     protected override void OnPickup()
     {
-        Debug.Log("Apple picked up!");
+        levelGenerator.ChangeChunkSpeed(increaseChunkSpeed);
     }
 }
