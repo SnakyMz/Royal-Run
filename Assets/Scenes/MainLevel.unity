@@ -327,9 +327,9 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
-  looping: 1
+  looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -5415,6 +5415,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f5248d2116234b49af6414e240f2205, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speedUpParticle: {fileID: 156691535}
   minFOV: 30
   maxFOV: 90
   zoomDuration: 1
