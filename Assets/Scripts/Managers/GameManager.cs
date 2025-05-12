@@ -5,6 +5,7 @@ public class GameManager : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] TMP_Text timeText;
+    [SerializeField] GameObject gameOverText;
     [Header("Game Settings")]
     [SerializeField] float startTime = 30f;
 
@@ -21,5 +22,16 @@ public class GameManager : MonoBehaviour
     {
         timeLeft -= Time.deltaTime;
         timeText.text = timeLeft.ToString("F2");
+
+        if (timeLeft <= 0)
+        {
+            GameOver();
+        }
+    }
+
+    void GameOver()
+    {
+        gameOverText.SetActive(true);
+        Time.timeScale = 0.1f;
     }
 }
