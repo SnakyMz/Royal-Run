@@ -1,16 +1,17 @@
 using UnityEngine;
+using TMPro;
 
 public class Scoreboard : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [Header("References")]
+    [SerializeField] TextMeshProUGUI scoreboardUI;
 
-    // Update is called once per frame
-    void Update()
+    int score = 0;
+
+    public void increaseScore(int points)
     {
-        
+        score += points;
+
+        scoreboardUI.text = score.ToString();
     }
 }
