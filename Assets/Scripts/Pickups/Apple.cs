@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Apple : Pickup
 {
+    [Header("Apple Settings")]
     [SerializeField] float increaseChunkSpeed = 3f;
 
     LevelGenerator levelGenerator;

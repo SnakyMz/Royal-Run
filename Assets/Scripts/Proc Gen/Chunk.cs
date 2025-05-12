@@ -3,9 +3,11 @@ using System.Collections.Generic;
 
 public class Chunk : MonoBehaviour
 {
+    [Header("Prefabs")]
     [SerializeField] GameObject fencePrefab;
     [SerializeField] GameObject applePrefab;
     [SerializeField] GameObject coinPrefab;
+    [Header("Spawn Settings")]
     [SerializeField] float appleSpawnChance = 0.3f;
     [SerializeField] float coinSpawnChance = 0.5f;
     [SerializeField] float coinSeperationLength = 2f;

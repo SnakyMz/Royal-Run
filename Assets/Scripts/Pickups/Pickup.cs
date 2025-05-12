@@ -2,6 +2,7 @@ using UnityEngine;
 
 public abstract class Pickup : MonoBehaviour
 {
+    [Header("Pickup Settings")]
     [SerializeField] float rotationSpeed = 100f;
 
     const string playerTag = "Player";
