@@ -4,14 +4,17 @@ using TMPro;
 public class Scoreboard : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] TMP_Text scoreboardUI;
+    [SerializeField] GameManager gameManager;
+    [SerializeField] TMP_Text scoreText;
 
     int score = 0;
 
     public void IncreaseScore(int points)
     {
+        if (gameManager.GameOver) return;
+
         score += points;
 
-        scoreboardUI.text = score.ToString();
+        scoreText.text = score.ToString();
     }
 }

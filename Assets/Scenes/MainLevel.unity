@@ -6374,7 +6374,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3017f4d1c632d7b4ea639f64c05e79f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreboardUI: {fileID: 1504612577}
+  gameManager: {fileID: 1558185702}
+  scoreText: {fileID: 1504612577}
 --- !u!4 &1558185701
 Transform:
   m_ObjectHideFlags: 0
