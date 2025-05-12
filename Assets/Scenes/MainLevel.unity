@@ -5528,6 +5528,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c57f6bfa0d4879942b9f64240f87e0fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreboard: {fileID: 1558185700}
   cameraController: {fileID: 433604170}
   chunkPrefab: {fileID: 7579249492408040698, guid: da25c474c689ae64eb74b3116622f764, type: 3}
   chunkParent: {fileID: 95891691}

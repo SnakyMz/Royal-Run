@@ -4,6 +4,7 @@ using UnityEngine;
 public class LevelGenerator : MonoBehaviour
 {
     [Header("References")]
+    [SerializeField] Scoreboard scoreboard;
     [SerializeField] CameraController cameraController;
     [SerializeField] GameObject chunkPrefab;
     [SerializeField] Transform chunkParent;
@@ -17,8 +18,8 @@ public class LevelGenerator : MonoBehaviour
     [SerializeField] float minGravityZ = -22f;
     [SerializeField] float maxGravityZ = -2f;
 
-    List<GameObject> chunks = new List<GameObject>();
 
+    List<GameObject> chunks = new List<GameObject>();
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -63,6 +64,8 @@ public class LevelGenerator : MonoBehaviour
         Vector3 chunkPosition = new Vector3(transform.position.x, transform.position.y, (chunks.Count * chunkLength) - chunkLength);
         GameObject chunk = Instantiate(chunkPrefab, chunkPosition, Quaternion.identity, chunkParent);
         chunks.Add(chunk);
+        Chunk newChunk = chunk.GetComponent<Chunk>();
+        newChunk.Init(this, scoreboard);
     }
 
     void MoveChunks()

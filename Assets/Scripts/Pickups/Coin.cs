@@ -7,9 +7,9 @@ public class Coin : Pickup
 
     Scoreboard scoreboard;
 
-    void Start()
+    public void Init(Scoreboard scoreB)
     {
-        scoreboard = FindFirstObjectByType<Scoreboard>();
+        scoreboard = scoreB;
     }
     protected override void OnPickup()
     {
