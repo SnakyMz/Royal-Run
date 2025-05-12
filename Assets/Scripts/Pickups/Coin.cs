@@ -13,6 +13,6 @@ public class Coin : Pickup
     }
     protected override void OnPickup()
     {
-        scoreboard.increaseScore(points);
+        scoreboard.IncreaseScore(points);
     }
 }

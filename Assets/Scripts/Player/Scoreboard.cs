@@ -4,11 +4,11 @@ using TMPro;
 public class Scoreboard : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] TextMeshProUGUI scoreboardUI;
+    [SerializeField] TMP_Text scoreboardUI;
 
     int score = 0;
 
-    public void increaseScore(int points)
+    public void IncreaseScore(int points)
     {
         score += points;
 
