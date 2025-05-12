@@ -4,12 +4,15 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     [Header("References")]
+    [SerializeField] PlayerController playerController;
     [SerializeField] TMP_Text timeText;
     [SerializeField] GameObject gameOverText;
     [Header("Game Settings")]
     [SerializeField] float startTime = 30f;
 
     float timeLeft;
+
+    bool gameOver = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -20,6 +23,13 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        DecreaseTime();
+    }
+
+    void DecreaseTime()
+    {
+        if (gameOver) return;
+
         timeLeft -= Time.deltaTime;
         timeText.text = timeLeft.ToString("F2");
 
@@ -31,6 +41,8 @@ public class GameManager : MonoBehaviour
 
     void GameOver()
     {
+        gameOver = true;
+        playerController.enabled = false;
         gameOverText.SetActive(true);
         Time.timeScale = 0.1f;
     }

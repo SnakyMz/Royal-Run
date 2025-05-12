@@ -6402,7 +6402,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67eb276c1d05d044aaea2daf3b9c6b47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerController: {fileID: 1541413821}
   timeText: {fileID: 1310128056}
+  gameOverText: {fileID: 1057794767}
   startTime: 30
 --- !u!1 &1598938573
 GameObject:
