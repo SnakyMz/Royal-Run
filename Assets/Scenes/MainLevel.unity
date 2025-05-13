@@ -5530,7 +5530,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreboard: {fileID: 1558185700}
   cameraController: {fileID: 433604170}
-  chunkPrefab: {fileID: 7579249492408040698, guid: da25c474c689ae64eb74b3116622f764, type: 3}
+  chunkPrefabs:
+  - {fileID: 7579249492408040698, guid: da25c474c689ae64eb74b3116622f764, type: 3}
+  - {fileID: 7579249492408040698, guid: da25c474c689ae64eb74b3116622f764, type: 3}
+  - {fileID: 7579249492408040698, guid: da25c474c689ae64eb74b3116622f764, type: 3}
+  - {fileID: 6675342753346739006, guid: b915630fe73a1c4459762a0257c9db25, type: 3}
+  - {fileID: 6675342753346739006, guid: 9de3266011ce19749814345a1f8e35dc, type: 3}
+  - {fileID: 6675342753346739006, guid: 98dfc1284b60cf246b39ce9d8efeb904, type: 3}
   chunkParent: {fileID: 95891691}
   startingChunksAmount: 12
   chunkLength: 10
