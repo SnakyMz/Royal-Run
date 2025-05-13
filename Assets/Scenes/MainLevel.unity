@@ -5540,6 +5540,7 @@ MonoBehaviour:
   chunkCheckpoint: {fileID: 3259773622233135850, guid: c76f1d3b4527fa54589671b234c6e2fe, type: 3}
   chunkParent: {fileID: 95891691}
   startingChunksAmount: 12
+  checkpointPosition: 10
   chunkLength: 10
   moveSpeed: 8
   minMoveSpeed: 2

@@ -14,7 +14,7 @@ public class LevelGenerator : MonoBehaviour
     [SerializeField] int checkpointPosition = 8;
     [Tooltip("Dont chnange, the value must be same as the chunk prefab length")]
     [SerializeField] float chunkLength = 10f;
-    [SerializeField] float moveSpeed = 8f;
+    [SerializeField] float moveSpeed = 10f;
     [SerializeField] float minMoveSpeed = 2f;
     [SerializeField] float maxMoveSpeed = 20f;
     [SerializeField] float minGravityZ = -22f;
