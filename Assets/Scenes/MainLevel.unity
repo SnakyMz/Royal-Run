@@ -5537,6 +5537,7 @@ MonoBehaviour:
   - {fileID: 6675342753346739006, guid: b915630fe73a1c4459762a0257c9db25, type: 3}
   - {fileID: 6675342753346739006, guid: 9de3266011ce19749814345a1f8e35dc, type: 3}
   - {fileID: 6675342753346739006, guid: 98dfc1284b60cf246b39ce9d8efeb904, type: 3}
+  chunkCheckpoint: {fileID: 3259773622233135850, guid: c76f1d3b4527fa54589671b234c6e2fe, type: 3}
   chunkParent: {fileID: 95891691}
   startingChunksAmount: 12
   chunkLength: 10
