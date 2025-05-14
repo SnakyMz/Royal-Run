@@ -5201,8 +5201,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.120713376, y: 0, z: 0, w: 0.99268746}
-  m_LocalPosition: {x: 27.090912, y: -18.3, z: 14.8}
+  m_LocalRotation: {x: 0.16021715, y: -0.0000949919, z: 0.000015418507, w: 0.9870818}
+  m_LocalPosition: {x: 27.09164, y: -18.43649, z: 14.794407}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5415,6 +5415,7 @@ GameObject:
   m_Component:
   - component: {fileID: 433604168}
   - component: {fileID: 433604169}
+  - component: {fileID: 433604171}
   - component: {fileID: 433604170}
   m_Layer: 0
   m_Name: CinemachineCamera
@@ -5431,8 +5432,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 433604167}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.120713376, y: -0, z: -0, w: 0.99268746}
-  m_LocalPosition: {x: 27.090912, y: -18.3, z: 14.8}
+  m_LocalRotation: {x: 0.16021715, y: -0.0000949919, z: 0.000015418507, w: 0.9870818}
+  m_LocalPosition: {x: 27.09164, y: -18.43649, z: 14.794407}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5459,7 +5460,7 @@ MonoBehaviour:
   m_StreamingVersion: 20241001
   m_LegacyPriority: 0
   Target:
-    TrackingTarget: {fileID: 0}
+    TrackingTarget: {fileID: 1541413818}
     LookAtTarget: {fileID: 0}
     CustomLookAtTarget: 0
   Lens:
@@ -5499,6 +5500,37 @@ MonoBehaviour:
   maxFOV: 90
   zoomDuration: 1
   zoomModifier: 5
+--- !u!114 &433604171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 433604167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 886251e9a18ece04ea8e61686c173e1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CameraDistance: 4
+  DeadZoneDepth: 0
+  Composition:
+    ScreenPosition: {x: 0.00000011920929, y: -0.00000008195639}
+    DeadZone:
+      Enabled: 1
+      Size: {x: 0.26, y: 0.06}
+    HardLimits:
+      Enabled: 0
+      Size: {x: 0.8, y: 0.8}
+      Offset: {x: 0, y: 0}
+  CenterOnActivate: 1
+  TargetOffset: {x: 0, y: 1.5, z: 0}
+  Damping: {x: 1, y: 1, z: 1}
+  Lookahead:
+    Enabled: 0
+    Time: 0
+    Smoothing: 0
+    IgnoreY: 0
 --- !u!1 &714622668
 GameObject:
   m_ObjectHideFlags: 0
