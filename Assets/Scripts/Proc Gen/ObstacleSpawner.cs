@@ -9,6 +9,7 @@ public class ObstacleSpawner : MonoBehaviour
     [Header("Spawn Settings")]
     [SerializeField] float obstacleSpawnedTime = 3f;
     [SerializeField] float spawnRange = 4f;
+    [SerializeField] float minSpawnTime = 0.5f;
 
     void Start()
     {
@@ -24,6 +25,14 @@ public class ObstacleSpawner : MonoBehaviour
             GameObject obstaclePrefab = obstaclePrefabs[Random.Range(0, obstaclePrefabs.Length)];
             Vector3 spawnPosition = new Vector3(Random.Range(-spawnRange, spawnRange), transform.position.y, transform.position.z);
             Instantiate(obstaclePrefab, spawnPosition, Random.rotation, obstacleParent);
+        }
+    }
+
+    public void DecreaseObstacleSpawnTime(float amount)
+    {
+        if (obstacleSpawnedTime > minSpawnTime)
+        {
+            obstacleSpawnedTime -= amount;
         }
     }
 }
